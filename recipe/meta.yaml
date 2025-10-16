@@ -1,13 +1,13 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "pytokens" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  sha256: 532d6421364e5869ea57a9523bf385f02586d4662acbcc0342afd69511b4dd43
 
 build:
   number: 0
@@ -18,28 +18,29 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
 
 test:
+  source_files:
+    - tests
   imports:
-    - {{ name.replace('-', '.') }}
+    - pytokens
   requires:
+    - pytest
     - pip
   commands:
     - pip check
+    - pytest tests
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://github.com/tusharsadhwani/pytokens
+  dev_url: https://github.com/tusharsadhwani/pytokens
+  doc_url: https://github.com/tusharsadhwani/pytokens/blob/main/README.md
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: "A fast, spec-compliant Python tokenizer"
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
-
-extra:
-  recipe-maintainers:
-    - Jrice1317
+    A fast, spec-compliant Python tokenizer that runs on older Pythons.
