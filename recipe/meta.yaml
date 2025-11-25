@@ -1,5 +1,5 @@
 {% set name = "pytokens" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 532d6421364e5869ea57a9523bf385f02586d4662acbcc0342afd69511b4dd43
+  sha256: 2f932b14ed08de5fcf0b391ace2642f858f1394c0857202959000b68ed7a458a
 
 build:
   number: 0
@@ -32,7 +32,7 @@ test:
     - pip
   commands:
     - pip check
-    - pytest tests
+    - pytest -v tests
 
 about:
   home: https://github.com/tusharsadhwani/pytokens
