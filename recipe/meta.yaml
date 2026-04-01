@@ -15,10 +15,14 @@ build:
   skip: True  # [py<38]
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=69
+    - wheel
+    - mypy
   run:
     - python
 
