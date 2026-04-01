@@ -16,11 +16,12 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
     - python
     - pip
-    - setuptools >=69
+    - setuptools
     - wheel
     - mypy
   run:
