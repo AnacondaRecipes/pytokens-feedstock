@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=69
     - wheel
     - mypy
   run:
